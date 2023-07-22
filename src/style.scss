@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+}
+
+.form-container {
+    background-color: #27374D;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .form-wapper {
+        background: white;
+        padding: 20px 60px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        min-width: 300px;
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0F3057;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #9DB2BF;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 100%;
+
+            input {
+                border: none;
+                border-bottom: 1px solid #9DB2BF;
+                padding: 15px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: rgb(175, 175, 175)
+                }
+            }
+
+            button {
+                background-color: #27374D;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            label {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #4482e9;
+                font-size: 15px;
+
+                img {
+                    width: 32px;
+                }
+            }
+        }
+
+    }
+}
+
+.home {
+    background-color: #DDE6ED;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        border: 1px solid transparent;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 10px;
+        width: 65%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+        min-width: 998.5px;
+
+        .sidebar {
+            flex: 1;
+            background-color: #27374D;
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #07172b;
+                height: 30px;
+                padding: 10px;
+                color: whitesmoke;
+
+                .logo {
+                    font-weight: bold;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img {
+                        background-color: whitesmoke;
+                        height: 26px;
+                        width: 26px;
+                        border-radius: 50%;
+                    }
+
+                    button {
+                        background-color: #4F709C;
+                        color: whitesmoke;
+                        font-size: 12px;
+                        border: none;
+                        padding: 5px 10px 5px 10px;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .search {
+                border-bottom: 1px solid black;
+
+                .search-form {
+                    padding: 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    input {
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        color: white;
+                        width: 100%;
+                        padding: 5px 0;
+
+                        &::placeholder {
+                            color: lightgray
+                        }
+                    }
+                }
+            }
+
+            .user-chat {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #1e2b3e;
+                    transition: all 0.5s;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    background-color: white;
+                }
+
+                .user-chat-info {
+                    span {
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        color: lightgray;
+                    }
+                }
+            }
+        }
+
+        .chat {
+            flex: 2;
+
+            .chat-info {
+                background-color: #164680;
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 30px;
+                padding: 10px;
+
+                .chat-icons {
+                    display: flex;
+                    gap: 15px;
+
+                    img {
+                        height: 20px;
+                    }
+                }
+            }
+
+            .messages {
+                background-color: rgba(237, 233, 233, 0.596);
+                padding: 10px;
+                height: calc(100% - 130px);
+                overflow: scroll;
+                overflow-x: hidden;
+
+
+                /* width */
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    &::-webkit-scrollbar-track {
+                        background-color: #f1f1f1;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #888;
+                    }
+                }
+
+                .message {
+                    margin-top: 10px;
+                    display: flex;
+                    gap: 20px;
+
+                    .message-info {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        font-weight: lighter;
+                        color: rgb(133, 130, 130);
+
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .message-content {
+                        max-width: 70%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: start;
+                        gap: 5px;
+
+                        p {
+                            background-color: white;
+                            padding: 10px 20px;
+                            border-radius: 10px;
+                        }
+
+                        img {
+                            width: 40%;
+                        }
+                    }
+
+                    &.owner {
+                        flex-direction: row-reverse;
+
+                        p {
+                            background-color: rgb(158, 189, 224);
+                        }
+
+                        .message-content {
+                            align-items: end;
+                        }
+                    }
+                }
+
+            }
+
+            .input {
+                background-color: white;
+                height: 40px;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+
+                    &::placeholder {
+                        color: lightgray;
+                    }
+                }
+
+                .send {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    img {
+                        height: 22px;
+                        cursor: pointer;
+                    }
+
+                    button {
+                        border: none;
+                        padding: 8px 15px;
+                        border-radius: 5px;
+                        color: white;
+                        background-color: #164680;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #164680e8;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
