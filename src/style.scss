@@ -232,7 +232,7 @@
                 /* Track */
                 &::-webkit-scrollbar-track {
                     background-color: transparent;
-                }   
+                }
 
                 /* Handle */
                 &::-webkit-scrollbar-thumb {
@@ -262,7 +262,8 @@
                         font-weight: lighter;
                         color: rgb(133, 130, 130);
 
-                        img, .avatar-container {
+                        img,
+                        .avatar-container {
                             width: 40px;
                             height: 40px;
                             border-radius: 50%;
@@ -351,3 +352,16 @@
         }
     }
 }
+
+.loading-button {
+    opacity: 0.8;
+    cursor: default !important;
+}
+
+.loading-button svg{
+  height: 10px;
+  width: 250px;
+  display:inline-block;
+}
+
+
