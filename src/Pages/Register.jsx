@@ -70,7 +70,7 @@ function Register() {
     return (
         <div className='form-container'>
             <div className='form-wapper'>
-                <span className='logo'>Chap App</span>
+                <span className='logo'>Chat App</span>
                 <span className='title'>Register</span>
                 <form onSubmit={handleOnSubmit}>
                     <input type='text' placeholder='Your username' />

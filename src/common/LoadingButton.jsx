@@ -1,10 +1,10 @@
 import React from 'react'
 
-function LoadingButton() {
+function LoadingButton({style}) {
     return (
         <button type="button" className='loading-button'>
-            <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 100 100" enable-background="new 0 0 0 0" xmlSpace="preserve">
+            <svg style={{...style}} version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 100 100" enableBackground="new 0 0 0 0" xmlSpace="preserve">
                 <circle fill="#fff" stroke="none" cx="0" cy="50" r="30">
                     <animate
                         attributeName="opacity"

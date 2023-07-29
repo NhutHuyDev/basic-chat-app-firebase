@@ -31,7 +31,7 @@ function Login() {
     <>
       <div className='form-container'>
         <div className='form-wapper'>
-          <span className='logo'>Chap App</span>
+          <span className='logo'>Chat App</span>
           <span className='title'>Login</span>
           <form onSubmit={handleOnSubmit}>
             <input type='email' placeholder='Your email' />

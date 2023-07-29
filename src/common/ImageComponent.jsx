@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { Blurhash } from "react-blurhash"
 
-function ImageComponent({ 
-        src = '', 
-        alt = '', 
-        loading = '', 
-        height = '250px', 
-        width = '180px' }) {
-            
+function ImageComponent({
+    src = '',
+    alt = '',
+    loading = '',
+    height = '250px',
+    width = '180px' }) {
+
     const [imageLoading, setImageLoading] = useState(true)
 
     useEffect(() => {
@@ -16,7 +16,7 @@ function ImageComponent({
             setImageLoading(false)
         }
         img.src = src
-    }, [])
+    }, [src])
 
     return (
         <>
@@ -30,9 +30,7 @@ function ImageComponent({
                     punch={1}
                 />
             </div>
-            <div style={{ display: imageLoading ? 'none' : 'block' }}>
-                <img src={src} alt={alt || ''} loading={loading || 'lazy'} />
-            </div>
+            <img style={{display: imageLoading ? 'none' : 'flex' }} src={src} alt={alt || ''} loading={loading || 'lazy'} />
         </>
     )
 }

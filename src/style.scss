@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .form-container {
@@ -272,6 +273,10 @@
                         .avatar-container {
                             background-color: white;
                         }
+
+                        .message-date {
+                            font-size: 13px !important;
+                        }
                     }
 
                     .message-content {
@@ -358,10 +363,8 @@
     cursor: default !important;
 }
 
-.loading-button svg{
-  height: 10px;
-  width: 250px;
-  display:inline-block;
+.loading-button svg {
+    height: 10px;
+    width: 250px;
+    display: inline-block;
 }
-
-

@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { db } from "../firebase"
 import { collection, doc, getDoc, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from "firebase/firestore"
 import { useContext } from "react"
 import { AuthContext } from "../context/AuthContext"
+import { ChatContext } from "../context/ChatContext"
+
+import useOutsideClick from "../customHooks/useOutsideClick"
 
 function Search() {
+
   const [username, setUsername] = useState("")
   const [user, setUser] = useState(null)
   const [error, setError] = useState(false)
 
   const { currentUser } = useContext(AuthContext)
+  const { dispatch } = useContext(ChatContext)
 
   const handleSearch = async () => {
     setUser(null)
@@ -70,18 +75,28 @@ function Search() {
           },
           [combinedId + ".date"]: serverTimestamp()
         })
+
       }
 
     } catch (error) {
       console.log(error)
     }
 
+    dispatch({ type: "CHANGE_USER", payload: user })
     setUser(null)
     setUsername("")
+    setUser(false)
   }
 
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, () => {
+    setUsername("")
+    setUser(null)
+    setUser(false)
+  });
+
   return (
-    <div className="search">
+    <div className="search" ref={wrapperRef}>
       <div className="search-form">
         <img src="/svg/magnifying-glass-icon.svg" alt="magnifying-glass"></img>
         <input
@@ -90,10 +105,7 @@ function Search() {
           onKeyDown={handleKeyDown}
           value={username}
           onChange={(e) => { setUsername(e.target.value) }}
-          onBlur={(e) => {
-            setUser(null)
-            setUsername("")
-          }}></input>
+        ></input>
       </div>
 
       {
